@@ -1,0 +1,17 @@
+<div>
+    <div *ngIf="itemDeleted === ''; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <h3>No ha borrado nada.</h3>
+    </ng-template>
+    <ng-template #elseBlock>
+        <h3>Ítem borrado: <span>{{ itemDeleted }}</span></h3>
+    </ng-template>
+</div>
+
+<button (click)="borrarItem()">Borrar Item</button>
+
+<ul>
+    <li *ngFor="let item of arrai; let i = index;">
+        {{ i + 1 }} - {{ item }}
+    </li>
+</ul>
